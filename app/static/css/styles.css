@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(../font/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: "MontserratBold";
+    src: url(../font/montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../font/roboto/Roboto-Regular.ttf);
+}
+
+* {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+<<<<<<< HEAD
+header #bienvenue{
+    position:relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+}
+
+#bienvenue img{
+    width: 100%;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255, 255, 255, 0.205));
+}
+
+#bienvenue h2{
+    position:absolute;
+    top: 0;
+    color: #fff;
+=======
+header{
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+    letter-spacing: .2rem;
+>>>>>>> parent of 9bf6db8 (prepare for ddb and parsers, more front done)
+    padding: 1rem;
+}
+#recherche{
+<<<<<<< HEAD
+
+    font-family: "Roboto";
+    padding: 1.5rem;
+    background-color: rgba(144, 194, 139, 0.178);
+=======
+    margin: 0 2vw 1vh 2vw;
+>>>>>>> parent of 9bf6db8 (prepare for ddb and parsers, more front done)
+}
+
+#farmerList{
+    font-family: "MontserratBold";
+}

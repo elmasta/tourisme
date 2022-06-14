@@ -1,0 +1,8 @@
+env/
+__pycache__/
+<<<<<<< HEAD
+app/__pycache__/
+seccodes.py
+=======
+app/__pycache__/
+>>>>>>> parent of 9bf6db8 (prepare for ddb and parsers, more front done)
