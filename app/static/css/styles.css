@@ -1,16 +1,16 @@
 @font-face {
     font-family: "Montserrat";
-    src: url(../font/montserrat/Montserrat-Regular.ttf);
+    src: url(../font/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: "MontserratBold";
-    src: url(../font/montserrat/Montserrat-Bold.ttf);
+    src: url(../font/Montserrat-Bold.ttf);
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url(../font/roboto/Roboto-Regular.ttf);
+    src: url(../font/Roboto-Regular.ttf);
 }
 
 * {
@@ -18,43 +18,100 @@
     margin: 0;
     padding: 0;
 }
-<<<<<<< HEAD
-header #bienvenue{
-    position:relative;
+
+header #bienvenue {
+    position: relative;
     width: 100%;
     display: flex;
     align-content: center;
 }
 
-#bienvenue img{
+#bienvenue img {
     width: 100%;
     -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255, 255, 255, 0.205));
+
 }
 
-#bienvenue h2{
-    position:absolute;
+#bienvenue h2 {
+    position: absolute;
     top: 0;
     color: #fff;
-=======
-header{
-    position: relative;
-    justify-content: space-between;
-    text-align: center;
-    letter-spacing: .2rem;
->>>>>>> parent of 9bf6db8 (prepare for ddb and parsers, more front done)
     padding: 1rem;
+    font-size: larger;
+
 }
-#recherche{
-<<<<<<< HEAD
+
+#recherche {
 
     font-family: "Roboto";
     padding: 1.5rem;
-    background-color: rgba(144, 194, 139, 0.178);
-=======
-    margin: 0 2vw 1vh 2vw;
->>>>>>> parent of 9bf6db8 (prepare for ddb and parsers, more front done)
+    background-color: rgba(194, 169, 139, 0.178);
 }
 
-#farmerList{
+#farmerList {
     font-family: "MontserratBold";
+}
+
+#imgText {
+
+    position: relative;
+    width: 100%;
+
+}
+
+#imgText img {
+    width: 100%;
+    box-shadow: rgba(116, 87, 52, 0.164) 3px;
+}
+
+#imgText h1 {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 1rem;
+    font-size: larger;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    background-color: #111b25;
+    color: #fff;
+    height: 4rem;
+}
+
+@media screen and (min-width:800px) {
+    #bienvenue h2 {
+        position: absolute;
+        top: 0;
+        color: #fff;
+        padding: 1.5rem;
+        letter-spacing: .1rem;
+        font-size: xx-large;
+    }
+
+    #imgText h1 {
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        padding: 1.5rem;
+        letter-spacing: .1rem;
+        font-size: xx-large;
+
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 5px;
+        background-color: #111b25;
+        color: #fff;
+        height: 4rem;
+        font-size: larger;
+    }
+
 }

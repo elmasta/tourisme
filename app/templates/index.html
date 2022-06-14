@@ -7,18 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/styles.css">
     <title>Projet Valf</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+        <script src="../static/js/main.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h3>Bienvenue sur </h3>
+        <div id="bienvenue">
+            <img src="../static/img/Vente-a-la-ferme2.jpg" alt="">
+            <h2>Bienvenue sur </h2>
+        </div>
     </header>
     <main>
         <div id="recherche">
             <form action="" method="post" name="search">
                 <label for="chooseYourFarm">Que recherchez-vous:</label>
+                <!-- revoir la façon de sélectionner, choisir des boutons (verts?) -->
                 <input list="farmerList" id="chooseYourFarm" name="chooseYourFarm" />
-
+                <br>
                 <datalist id="farmerList">
                     <option value="Boissons">
                     <option value="Fruits">
@@ -27,20 +39,39 @@
                     <option value="Viandes">
                 </datalist>
                 <br>
-                <label for="sinon">Sinon, tapez ci-dessous ;)</label><br>
+                <label for="sinon">Sinon, tapez ci-dessous ;)</label>
+                <br>
                 <input type="search" name="sinon" id="sinon" placeholder="Tapez votre texte ici"> <input type="submit"
                     value="Envoyer">
 
             </form>
 
         </div>
-        <img src="../static/img/paysans dans le frigo.jpg" alt="producteur dans le frigo">    
-        <div id="text">
-			Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en Seine-Maritime.</div>
+        <div id="imgText">
+            <!-- mettre l'image dans la div parent -->
+            <img src="../static/img/paysans dans le frigo.jpg" alt="Paysans dans le frigo">
+
+            <!-- code d'amy -->
+            <div>
+                <p>Voici les Lieux qui peuvent correspondre:</p>
+                <ul>
+
+                </ul>
+            </div>
+
+            <div id="map" style="width: 600px; height: 400px; position: relative;"
+                class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                tabindex="0"></div>
+            <div><input type="submit" placeholder="Nouvelle Recherche"></div>
+            <!-- fin code d'amy -->
+
+            <h1> Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en
+                Seine-Maritime.</h1>
+        </div>
     </main>
 
     <footer>
-        mention legale / Powered By 
+        mention legale / Powered By
     </footer>
 
 
