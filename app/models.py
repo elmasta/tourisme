@@ -7,23 +7,30 @@ from .views import app
 db = SQLAlchemy(app)
 
 
-class Content(db.Model):
+class Producteurs(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
-    catprod = db.Column(db.String(200), nullable=False)
-    bio = db.Column(db.Integer, nullable=False)
-    ville = db.Column(db.String(200), nullable=False)
-    departement = db.Column(db.String(200), nullable=False)
-    longitude = db.Column(db.String(100), nullable=False)
-    latitude = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(200))
+    addr = db.Column(db.String(300))
+    cp = db.Column(db.Integer)
+    ville = db.Column(db.String(200))
+    dept = db.Column(db.String(200))
     contact = db.column(db.String(200))
+    lat = db.Column(db.String(100), nullable=False)
+    lon = db.Column(db.String(100), nullable=False)
 
-    def __init__(self, name, catprod, bio, ville, departement, longitude, latitude, contact):
+    def __init__(self, name, addr, cp, ville, dept, contact, lat, lon):
         self.name = name
-        self.catprod = catprod
-        self.bio = bio
+        self.addr = addr
+        self.cp = cp
         self.ville = ville
-        self.departement = departement
-        self.longitude = longitude
-        self.latitude = latitude
+        self.dept = dept
         self.contact = contact
+        self.lat = lat
+        self.lon = lon
+
+# faire la table des spécialités et la table de liaison
+
+def init_db():
+    db.drop_all()
+    db.create_all()
+    lg.warning('Database initialized!')

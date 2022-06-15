@@ -23,6 +23,7 @@ def process():
         list = []
         for item in request.form:
             list.append(item)
+        items = None
         # items = Content.query.filter_by(style=request.form[]).order_by(Content.name).all()
 
         # retour json d'une liste provenant de la BDD

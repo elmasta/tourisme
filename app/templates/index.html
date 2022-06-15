@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
-        <script src="../static/js/main.js" defer></script>
+    <script src="../static/js/main.js" defer></script>
 </head>
 
 <body>
@@ -51,22 +51,23 @@
             <!-- mettre l'image dans la div parent -->
             <img src="../static/img/paysans dans le frigo.jpg" alt="Paysans dans le frigo">
 
-            <!-- code d'amy -->
-            <div>
-                <p>Voici les Lieux qui peuvent correspondre:</p>
-                <ul>
+            <div id="inimg">
+                <div id="list">
+                    <p>Voici les Lieux qui peuvent correspondre:</p>
+                    <ul>
 
-                </ul>
+                    </ul>
+                </div>
+
+                <div id="mapContainer">
+                    <div id="map"
+                        class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                        tabindex="0">
+                    </div>
+                </div>
+
+                <h1>Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en Seine-Maritime.</h1>
             </div>
-
-            <div id="map" style="width: 600px; height: 400px; position: relative;"
-                class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-                tabindex="0"></div>
-            <div><input type="submit" placeholder="Nouvelle Recherche"></div>
-            <!-- fin code d'amy -->
-
-            <h1> Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en
-                Seine-Maritime.</h1>
         </div>
     </main>
 
