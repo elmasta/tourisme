@@ -1,8 +1,8 @@
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
 import logging as lg
 
-from unittest.loader import VALID_MODULE_NAME
-from flask_sqlalchemy import SQLAlchemy
-from .views import app
+app = Flask(__name__)
 
 db = SQLAlchemy(app)
 
@@ -10,16 +10,18 @@ db = SQLAlchemy(app)
 class Producteurs(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
+    cat = db.Column(db.String(500))
     addr = db.Column(db.String(300))
-    cp = db.Column(db.Integer)
+    cp = db.Column(db.String(20))
     ville = db.Column(db.String(200))
     dept = db.Column(db.String(200))
-    contact = db.column(db.String(200))
+    contact = db.Column(db.String(300))
     lat = db.Column(db.String(100), nullable=False)
     lon = db.Column(db.String(100), nullable=False)
 
-    def __init__(self, name, addr, cp, ville, dept, contact, lat, lon):
+    def __init__(self, name, cat, addr, cp, ville, dept, contact, lat, lon):
         self.name = name
+        self.cat = cat
         self.addr = addr
         self.cp = cp
         self.ville = ville
@@ -28,9 +30,9 @@ class Producteurs(db.Model):
         self.lat = lat
         self.lon = lon
 
-# faire la table des spécialités et la table de liaison
+# def init_db():
+#     db.drop_all()
+#     db.create_all()
+#     lg.warning('Database initialized!')
 
-def init_db():
-    db.drop_all()
-    db.create_all()
-    lg.warning('Database initialized!')
+# init_db()

@@ -1,14 +1,17 @@
-// $("button#send").on("click", function (event) {
+$("input#submit").on("click", function (event) {
 
-//     $.ajax({
-//         // données reçu
-//         data: {
-//             question: $("#question").val()
-//         },
-//         type: "POST",
-//         url: "/process"
-//     })
-//         .done(function (data) {
+    $.ajax({
+        // données reçu
+        data: {
+            chooseYourFarm: $("#chooseYourFarm").val(),
+            manual: $("#sinon").val()
+        },
+        type: "POST",
+        url: "/process"
+    })
+        .done(function (data) {})
+
+})
 
 var map = L.map('map').setView([49.443232, 1.099971], 8);
 const dataMap = [

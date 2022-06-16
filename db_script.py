@@ -1,27 +1,66 @@
-import pandas
 import os
 import config
+import json
+import sqlite3
 
 from flask_sqlalchemy import SQLAlchemy
-from .app.views import app
+from app.models import Producteurs
+from flask import Flask
 
+app = Flask(__name__)
 db_name = 'app.db'
 db = SQLAlchemy(app)
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(config.basedir, 'app.db')
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
-def add_users_to_db():
-    # CVS Column Names
-    col_names = ['name', 'addr', 'cp', 'ville', 'dept', 'contact', 'lat', 'lon']
-    # Use Pandas to parse the CSV file
-    csvData = pandas.read_csv(os.path.join(config.basedir, 'producteurs.csv'),names=col_names, header=None)
-    for i,row in csvData.iterrows():
-        print(i,row['name'],row['addr'],row['cp'],row['ville'],row['dept'],row['contact'],row['lat'],row['lon'])
-        # db.session.add(i,row['name'],row['catprod'],row['bio'],row['ville'],row['departement'],row['longitude'],row['latitude'],row['contact'])
-    # db.session.commit()
+# def fill_db():
 
-def query_db(list):
-    db.session.query(list)
-    # checker si ok
-    db.session.commit()
+#     with open("producteurs.json", encoding='utf-8') as file:
+#         file = json.load(file)
+#         for producers in file:
+#             print(db.session)
+#             item = Producteurs(producers["name"],
+#                                producers["cat"],
+#                                producers["addr"],
+#                                int(producers["cp"]),
+#                                producers["ville"],
+#                                producers["dept"],
+#                                producers["contact"],
+#                                producers["lat"],
+#                                producers["lon"])
+#             db.session.add(item)
+#             db.session.commit()
+#             # create a message to send to the console
+#             print("The producer" + producers["name"] + "has been submitted.")
+#             break
+
+# fill_db()
+
+connection = sqlite3.connect("app.db")
+cursor = connection.cursor()
+
+def fill_db():
+
+    with open("producteurs.json", encoding='utf-8') as file:
+        file = json.load(file)
+        for producers in file:
+            cat_str = ""
+            for i in producers["cat"]:
+                cat_str += i
+            sql = """INSERT INTO producteurs (name,
+                    cat, addr, cp, ville, dept, contact, lat, lon)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"""
+            val = (str(producers["name"]),
+                   str(producers["cat"]),
+                   str(producers["addr"]),
+                   str(producers["cp"]),
+                   str(producers["ville"]),
+                   str(producers["dept"]),
+                   str(producers["contact"]),
+                   str(producers["lat"]),
+                   str(producers["lon"]))
+            cursor.execute(sql, val)
+            connection.commit()
+
+fill_db()
