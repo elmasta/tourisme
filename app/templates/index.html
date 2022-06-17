@@ -28,7 +28,6 @@
         <div id="recherche">
             <form action='/process' method="post" name="search" id="search">
                 <label for="chooseYourFarm">Que recherchez-vous:</label>
-                <!-- revoir la façon de sélectionner, choisir des boutons (verts?) -->
                 <input list="farmerList" id="chooseYourFarm" name="chooseYourFarm" />
                 <br>
                 <datalist id="farmerList">
@@ -42,13 +41,14 @@
                 <label for="sinon">Sinon, tapez ci-dessous ;)</label>
                 <br>
                 <input type="search" name="sinon" id="sinon" placeholder="Tapez votre texte ici">
-                <input type="submit" value="Envoyer" id="submit">
+                <div id="send">
+                    <input type="submit" value="Envoyer" id="submit">
+                </div>
             </form>
 
         </div>
         <div id="imgText">
-            <!-- mettre l'image dans la div parent -->
-            <img src="../static/img/paysans dans le frigo.jpg" alt="Paysans dans le frigo">
+            <img src="../static/img/paysans dans le frigo.jpg" alt="Paysans dans le frigo" id="oldman">
 
             <div id="inimg">
                 <div id="list">
@@ -74,14 +74,14 @@
                       </table> -->
                 </div>
 
-                <div id="mapContainer">
+                <div id="mapContainer" class="hide">
                     <div id="map"
                         class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
                         tabindex="0">
                     </div>
                 </div>
 
-                <h1>Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en Seine-Maritime.</h1>
+                <h1 id="pdv">Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en Seine-Maritime.</h1>
             </div>
         </div>
     </main>
