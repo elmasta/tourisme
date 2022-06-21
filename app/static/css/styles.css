@@ -17,6 +17,7 @@
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header #bienvenue {
@@ -29,7 +30,6 @@ header #bienvenue {
 #bienvenue img {
     width: 100%;
     -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255, 255, 255, 0.205));
-
 }
 
 #bienvenue h2 {
@@ -38,7 +38,6 @@ header #bienvenue {
     color: #fff;
     padding: 1rem;
     font-size: larger;
-
 }
 
 #recherche {
@@ -53,10 +52,8 @@ header #bienvenue {
 }
 
 #imgText {
-
     position: relative;
     width: 100%;
-
 }
 
 #imgText img {
@@ -69,149 +66,40 @@ header #bienvenue {
     width: 100%;
     bottom: 0;
     color: #fff;
-    padding: 1rem;
+    padding: 0 1rem;
     font-size: larger;
+}
+
+#pResultat{
+    margin-bottom: 0;
+}
+
+#table-wrapper {
+    max-height: 100px;
+    overflow: auto;
+    overflow-x: auto;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.521);
 }
 
 #mapContainer{
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-#map{
-    width: 600px;
-    height: 400px;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 5px;
-    background-color: #111b25;
-    color: #fff;
-    height: 4rem;
-}
-
-@media screen and (min-width:800px) {
-    #bienvenue h2 {
-        position: absolute;
-        top: 0;
-        color: #fff;
-        padding: 1.5rem;
-        letter-spacing: .1rem;
-        font-size: xx-large;
-    }
-
-    #imgText h1 {
-        position: absolute;
-        bottom: 0;
-        color: #fff;
-        padding: 1.5rem;
-        letter-spacing: .1rem;
-        font-size: xx-large;
-
-    }
-
-    footer {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        padding: 5px;
-        background-color: #111b25;
-        color: #fff;
-        height: 4rem;
-        font-size: larger;
-    }
-
-}
-
-/* copie */
-@font-face {
-    font-family: "Montserrat";
-    src: url(../font/Montserrat-Regular.ttf);
-}
-
-@font-face {
-    font-family: "MontserratBold";
-    src: url(../font/Montserrat-Bold.ttf);
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url(../font/Roboto-Regular.ttf);
-}
-
-* {
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header #bienvenue {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-content: center;
-}
-
-#bienvenue img {
-    width: 100%;
-    -webkit-box-reflect: below 0 linear-gradient(transparent, rgba(255, 255, 255, 0.205));
-
-}
-
-#bienvenue h2 {
-    position: absolute;
-    top: 0;
-    color: #fff;
-    padding: 1rem;
-    font-size: larger;
-
-}
-
-#farmerList {
-    font-family: "MontserratBold";
-}
-
-#imgText {
-
-    position: relative;
-    width: 100%;
-
-}
-
-#imgText img {
-    width: 100%;
-    box-shadow: rgba(116, 87, 52, 0.164) 3px;
-}
-
-#inimg {
-    position: absolute;
-    width: 100%;
- top: 0;
-    color: #fff;
-    padding: 1rem;
-    font-size: larger;
-
-}
-
-#mapContainer{
-    width: 100%;
     justify-content: center;
     align-items: center;
     transition: all 3s;
     overflow: hidden;
+    padding-top: 1rem;
 }
-    
 
-    
 .show{
     display: flex;
     opacity: 1;
 }
+
 .hide{
     display: flex;
 }
@@ -219,15 +107,13 @@ header #bienvenue {
 #map{
     width: 600px;
     height: 400px;
-
 }
 
 #pdv{
-
     font-size: large;
     padding: 1rem;
-
 }
+
 footer {
     display: flex;
     justify-content: center;
@@ -236,7 +122,6 @@ footer {
     background-color: #111b25;
     color: #fff;
     height: 4rem;
-
 }
 
 @media screen and (min-width:576px) {
@@ -249,14 +134,17 @@ footer {
         font-size: xx-large;
     }
 
+    #table-wrapper {
+        max-height: 1500px;
+    }
+
     #imgText h1 {
         position: absolute;
         bottom: 0;
         color: #fff;
         padding: 1.5rem;
         letter-spacing: .1rem;
-
-
+        font-size: xx-large;
     }
 
     footer {
@@ -269,9 +157,8 @@ footer {
         height: 4rem;
         font-size: larger;
     }
+
     #mapContainer{
         margin-bottom: 10rem;
-        width: 60%;
     }
-
 }
