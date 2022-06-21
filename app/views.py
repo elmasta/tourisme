@@ -14,25 +14,28 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/process", methods=["POST"])
+@app.route('/process', methods=["POST"])
 def process():
 
+    i = 0
     datas = []
     if request.form["sinon"]:
-        print(request.form["sinon"])
         results = Producteurs.query.filter(Producteurs.cat.contains(request.form["sinon"]), Producteurs.dept.contains("Seine-Maritime"))
     else:
         results = Producteurs.query.filter(Producteurs.cat.contains(request.form["chooseYourFarm"]), Producteurs.dept.contains("Seine-Maritime"))
-        print(request.form["chooseYourFarm"])
     for result in results:
-        addr = result.addr + " " + result.cp + " " + result.ville + " " + result.dept
+        addr = result.name + " " + result.addr + " " + result.cp + " " + result.ville + " " + result.dept
         datas.append({"name" : result.name,
                       "cat" : result.cat,
                       "addr": addr,
                       "contact": result.contact,
                       "lat": result.lat,
                       "lon": result.lon})
-    return jsonify(datas)
+        i += 1
+    if i == 0:
+        return "error"
+    else:
+        return jsonify(datas)
 
 
 if __name__ == "__main__":

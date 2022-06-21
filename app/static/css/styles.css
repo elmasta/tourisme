@@ -45,7 +45,7 @@ header #bienvenue {
 
     font-family: "Roboto";
     padding: 1.5rem;
-    background-color: rgba(194, 169, 139, 0.178);
+    background-color: rgba(111, 212, 116, 0.438);
 }
 
 #farmerList {
@@ -172,13 +172,6 @@ header #bienvenue {
 
 }
 
-#recherche {
-
-    font-family: "Roboto";
-    padding: 1.5rem;
-    background-color: rgba(194, 169, 139, 0.178);
-}
-
 #farmerList {
     font-family: "MontserratBold";
 }
@@ -221,7 +214,6 @@ header #bienvenue {
 }
 .hide{
     display: flex;
-    opacity: 0;
 }
 
 #map{

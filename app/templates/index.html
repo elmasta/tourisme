@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les producteurs près de chez vous</title>
     <link rel="stylesheet" href="../static/css/styles.css">
-    <title>Projet Valf</title>
+
+    <!-- map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
         crossorigin="" />
@@ -14,7 +16,7 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
-    <script src="../static/js/main.js" defer></script>
+
 </head>
 
 <body>
@@ -26,7 +28,7 @@
     </header>
     <main>
         <div id="recherche">
-            <form action='/process' method="post" name="search" id="search">
+            <form method="post" name="search" id="search">
                 <label for="chooseYourFarm">Que recherchez-vous:</label>
                 <input list="farmerList" id="chooseYourFarm" name="chooseYourFarm" />
                 <br>
@@ -40,7 +42,7 @@
                 <br>
                 <label for="sinon">Sinon, tapez ci-dessous ;)</label>
                 <br>
-                <input type="search" name="sinon" id="sinon" placeholder="Tapez votre texte ici">
+                <input type="text" name="sinon" id="sinon" placeholder="Tapez votre texte ici">
                 <div id="send">
                     <input type="submit" value="Envoyer" id="submit">
                 </div>
@@ -53,25 +55,18 @@
             <div id="inimg">
                 <div id="list">
                     <p>Voici les Lieux qui peuvent correspondre:</p>
-                    <!-- <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
-                          <tr>
-                            <th>Nom</th>
-                            <th>catégories</th>
-                            <th>adresse</th>
-                            <th>contact</th>
-                          </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <th>catégories</th>
+                                <th>adresse</th>
+                                <th>contact</th>
+                            </tr>
                         </thead>
                         <tbody>
-                          {% for item in game_set %}
-                            <tr>
-                              <td>{{ item.game_name }}</td>
-                              <td>{{ item.plateform_id }}</td>
-                              <td>{{ item.completion_status }}</td>
-                            </tr>
-                          {% endfor %}
                         </tbody>
-                      </table> -->
+                    </table>
                 </div>
 
                 <div id="mapContainer" class="hide">
@@ -81,19 +76,20 @@
                     </div>
                 </div>
 
-                <h1 id="pdv">Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de chez vous, en Seine-Maritime.</h1>
+                <h1 id="pdv">Trouvez les producteurs et/ou les points de vente de produits locaux les plus proches de
+                    chez vous, en Seine-Maritime.</h1>
             </div>
         </div>
     </main>
 
     <footer>
-        mention legale / Powered By
+        By the dev group: better than logos, Python!
     </footer>
 
 
 </body>
-<script
-	src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- custom js -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </html>
