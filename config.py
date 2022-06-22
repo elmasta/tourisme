@@ -1,8 +1,9 @@
 import os
 
-SECRET_KEY = "#d#JCqThJ-l54\nilK\\7m\x0bp#\tj~#H"
+SECRET_KEY = os.environ['SECRET_KEY']
 
-APP_ID = 1200420960103866
-
-basedir = os.path.abspath(os.path.dirname(__file__))
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+if os.environ.get('DATABASE_URL') is None:
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+else:
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']

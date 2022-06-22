@@ -30,9 +30,9 @@ class Producteurs(db.Model):
         self.lat = lat
         self.lon = lon
 
-# def init_db():
-#     db.drop_all()
-#     db.create_all()
-#     lg.warning('Database initialized!')
+def init_db():
+    db.drop_all()
+    db.create_all()
+    lg.warning('Database initialized!')
 
-# init_db()
+init_db()
