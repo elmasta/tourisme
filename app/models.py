@@ -34,5 +34,3 @@ def init_db():
     db.drop_all()
     db.create_all()
     lg.warning('Database initialized!')
-
-init_db()
